@@ -1,0 +1,10 @@
+@article{reshef2014cleaning,
+  title={Cleaning up the record on the maximal information coefficient and equitability},
+  author={Reshef, David N and Reshef, Yakir A and Mitzenmacher, Michael and Sabeti, Pardis C},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={111},
+  number={33},
+  pages={E3362--E3363},
+  year={2014},
+  publisher={National Acad Sciences}
+}

@@ -1,0 +1,8 @@
+@article{ReshefEtAl2013,
+author = {Reshef, D. and Reshef, Y. and Mitzenmacher, M. and Sabeti, P.},
+title = {Equitability Analysis of the Maximal Information Coefficient, with Comparisons},
+journal = {ArXiv},
+url = {http://arxiv.org/abs/1301.6314},
+year = 2013,
+month = jan,
+}

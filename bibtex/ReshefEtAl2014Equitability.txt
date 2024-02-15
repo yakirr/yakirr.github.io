@@ -1,0 +1,6 @@
+@article{reshef2015equitability,
+  title={Equitability, interval estimation, and statistical power},
+  author={Reshef, Yakir A and Reshef, David N and Sabeti, Pardis C and Mitzenmacher, Michael M},
+  journal={arXiv preprint arXiv:1505.02212},
+  year={2015}
+}

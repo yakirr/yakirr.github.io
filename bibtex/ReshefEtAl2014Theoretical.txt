@@ -1,0 +1,6 @@
+@article{reshef2014theoretical,
+  title={Theoretical Foundations of Equitability and the Maximal Information Coefficient},
+  author={Reshef, Yakir A and Reshef, David N and Sabeti, Pardis C and Mitzenmacher, Michael},
+  journal={arXiv preprint arXiv:1408.4908},
+  year={2014}
+}

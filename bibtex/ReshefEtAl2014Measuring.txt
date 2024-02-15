@@ -1,0 +1,6 @@
+@article{reshef2015measuring,
+  title={Measuring dependence powerfully and equitably},
+  author={Reshef, Yakir A and Reshef, David N and Finucane, Hilary K and Sabeti, Pardis C and Mitzenmacher, Michael M},
+  journal={arXiv preprint arXiv:1505.02213},
+  year={2015}
+}

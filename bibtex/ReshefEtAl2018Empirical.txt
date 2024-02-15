@@ -1,0 +1,10 @@
+@article{reshef2018empirical,
+  title={An empirical study of the maximal and total information coefficients and leading measures of dependence},
+  author={Reshef, David N and Reshef, Yakir A and Sabeti, Pardis C and Mitzenmacher, Michael and others},
+  journal={The Annals of Applied Statistics},
+  volume={12},
+  number={1},
+  pages={123--155},
+  year={2018},
+  publisher={Institute of Mathematical Statistics}
+}

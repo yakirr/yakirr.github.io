@@ -1,0 +1,12 @@
+@article {RSA:RSA20424,
+	author = {Reshef, Yakir and Vadhan, Salil},
+	title = {On extractors and exposure-resilient functions for sublogarithmic entropy},
+	journal = {Random Structures & Algorithms},
+	publisher = {Wiley Subscription Services, Inc., A Wiley Company},
+	issn = {1098-2418},
+	url = {http://dx.doi.org/10.1002/rsa.20424},
+	doi = {10.1002/rsa.20424},
+	pages = {n/a--n/a},
+	keywords = {pseudorandomness, exposure-resilient function, randomness extractor, bit-fixing source},
+	year = {2012}
+}

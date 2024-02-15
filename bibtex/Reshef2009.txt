@@ -1,0 +1,9 @@
+@MastersThesis{Reshef2009,
+	author	=	{Yakir Reshef},
+	title	=	{{On Resilient and Exposure-Resilient Functions}},
+	school	=	{Harvard College},
+	address	=	{Cambridge, Massachusetts, USA},
+	year	=	{2009}
+}
+
+(Note: it's not really a master's thesis, but I don't know a better BibTeX entry type for it.)

@@ -1,0 +1,7 @@
+@article{kelley2018sequential,
+  title={Sequential regulatory activity prediction across chromosomes with convolutional neural networks},
+  author={Kelley, David R and Reshef, Yakir A and Belanger, David and McLean, Cory and Snoek, Jasper and Bileschi, Maxwell},
+  journal={Genome Research},
+  year={2018},
+  publisher={Cold Spring Harbor Laboratory}
+}

@@ -1,0 +1,7 @@
+@article{KirkpatrickEtAl2010,
+  title={Comparing Pedigree Graphs},
+  author={Kirkpatrick, B. and Reshef, Y. and Finucane, H. and Jiang, H. and Zhu, B. and Karp, R.M.},
+  journal={Journal of Computational Biology},
+  year={2012},
+  publisher={Mary Ann Liebert, Inc. 140 Huguenot Street, 3rd Floor New Rochelle, NY 10801 USA}
+}
