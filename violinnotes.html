@@ -372,7 +372,7 @@
 
   <div id="controls">
     <button id="startBtn" onclick="toggleGame()">Start</button>
-    <button id="easyBtn" onclick="toggleEasy()">Easy: OFF</button>
+    <button id="easyBtn" onclick="toggleDifficulty()">Mode: EASY</button>
     <div class="pill">⏰ <span id="timer">60</span>s</div>
   </div>
 
@@ -431,7 +431,8 @@ let currentNote = null;
 let gameInterval;
 let running = false;
 let lastClicked = null;
-let easyMode = false;
+let difficulty = 'easy';
+const difficultyModes = ['easy', 'medium', 'hard'];
 const leaderboardKey = 'ariel_violin_leaderboard_v1';
 
 let audioCtx = null;
@@ -688,6 +689,25 @@ const notes = [
   {name:'A', posStaff:12, string:'E', pos:5}
 ];
 
+function getFingerLabel(string, pos){
+  const note = notes.find(n => n.string === string && n.pos === pos);
+  if(!note) return '';
+
+  if(difficulty === 'hard') return '';
+
+  if(note.name.includes('#')){
+    if(difficulty === 'hard') return '';
+    return (string === 'D' && pos === 4) ||
+           (string === 'A' && pos === 4) ||
+           (string === 'E' && pos === 4) ||
+           (string === 'E' && pos === 2)
+      ? note.name
+      : '';
+  }
+
+  return note.name;
+}
+
 function drawStaff(){
   ctx.clearRect(0,0,320,260);
 
@@ -758,7 +778,7 @@ function drawNote(note){
   ctx.fill();
   ctx.restore();
 
-  document.getElementById('debug').innerText = easyMode ? `Find: ${note.name}` : '';
+  document.getElementById('debug').innerText = '';
 }
 
 let fingerPositions = [];
@@ -821,7 +841,7 @@ function drawCircle(x,y,string,pos){
   fbCtx.arc(x,y,18,0,Math.PI*2);
 
   let fill = 'rgba(255,255,255,0.92)';
-  if(easyMode && currentNote && currentNote.string===string && currentNote.pos===pos){
+  if(difficulty === 'easy' && currentNote && currentNote.string===string && currentNote.pos===pos){
     fill = '#8df0a7';
   }
   if(lastClicked && lastClicked.string===string && lastClicked.pos===pos){
@@ -837,6 +857,18 @@ function drawCircle(x,y,string,pos){
   fbCtx.lineWidth = 3;
   fbCtx.strokeStyle = '#80509f';
   fbCtx.stroke();
+
+  if(difficulty === 'easy' || difficulty === 'medium'){
+    const label = getFingerLabel(string, pos);
+    if(label){
+      fbCtx.fillStyle = '#5b3b6f';
+      fbCtx.font = 'bold 18px "Trebuchet MS", Arial';
+      fbCtx.textAlign = 'center';
+      fbCtx.textBaseline = 'middle';
+      fbCtx.fillText(label, x, y);
+    }
+  }
+
   fbCtx.restore();
 }
 
@@ -895,7 +927,8 @@ function createStar(startX, startY){
 function checkAnswer(pos, clickX, clickY){
   if(!currentNote) return;
   if(pos.string === currentNote.string && pos.pos === currentNote.pos){
-    score += 10;
+    const award = difficulty === 'easy' ? 10 : difficulty === 'medium' ? 20 : 30;
+    score += award;
     document.getElementById('score').innerText = score;
     playCorrectDing();
     createStar(clickX, clickY);
@@ -945,15 +978,22 @@ function stopGame(){
   clearInterval(gameInterval);
 }
 
-function toggleEasy(){
-  easyMode = !easyMode;
-  document.getElementById('easyBtn').innerText = easyMode ? 'Easy: ON' : 'Easy: OFF';
-  document.getElementById('easyBtn').style.filter = easyMode ? 'brightness(1.08)' : 'none';
+function updateDifficultyButton(){
+  const button = document.getElementById('easyBtn');
+  button.innerText = `Mode: ${difficulty.toUpperCase()}`;
+  button.style.filter = difficulty === 'easy' ? 'brightness(1.08)' : 'none';
+}
+
+function toggleDifficulty(){
+  const currentIndex = difficultyModes.indexOf(difficulty);
+  difficulty = difficultyModes[(currentIndex + 1) % difficultyModes.length];
+  updateDifficultyButton();
   drawNote(currentNote || notes[0]);
   drawFingerboard();
 }
 
 // init
+updateDifficultyButton();
 drawStaff();
 drawFingerboard();
 renderLeaderboard();
