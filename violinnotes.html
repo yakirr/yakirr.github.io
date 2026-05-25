@@ -406,6 +406,10 @@
     background: linear-gradient(135deg, #5b66ff, #36c2ff);
   }
 
+  #musicBtn {
+    background: linear-gradient(135deg, #3d4be3, #1f67c9);
+  }
+
   .pill {
     min-width: 92px;
     padding: 10px 16px;
@@ -666,6 +670,7 @@
     <button id="startBtn" onclick="toggleGame()">Start</button>
     <button id="easyBtn" onclick="toggleDifficulty()">Mode: EASY</button>
     <button id="themeBtn" onclick="toggleTheme()">Theme: PINK</button>
+    <button id="musicBtn" onclick="toggleMusic()">Music: MAGIC</button>
     <div class="pill">⏰ <span id="timer">120</span>s</div>
   </div>
 
@@ -728,6 +733,12 @@ let difficulty = 'easy';
 const difficultyModes = ['easy', 'medium', 'hard'];
 let theme = 'pink';
 const themeModes = ['pink', 'bubbles', 'forest', 'beach', 'unicorn', 'rainbow', 'castle'];
+let musicIndex = 0;
+const musicTracks = [
+  {label:'Magic', src:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'},
+  {label:'Adventure', src:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'},
+  {label:'Dreamy', src:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'}
+];
 const leaderboardKey = 'ariel_violin_leaderboard_v1';
 
 let audioCtx = null;
@@ -1278,9 +1289,28 @@ function updateThemeButton(){
   button.innerText = `Theme: ${theme.toUpperCase()}`;
 }
 
+function updateMusicButton(){
+  const button = document.getElementById('musicBtn');
+  button.innerText = `Music: ${musicTracks[musicIndex].label.toUpperCase()}`;
+}
+
 function applyTheme(){
   document.body.classList.remove(...themeModes.map(t => `theme-${t}`));
   document.body.classList.add(`theme-${theme}`);
+}
+
+function toggleMusic(){
+  musicIndex = (musicIndex + 1) % musicTracks.length;
+  const music = musicTracks[musicIndex];
+  const bgAudio = document.getElementById('bgMusic');
+  const wasPlaying = !bgAudio.paused && !bgAudio.ended;
+  bgAudio.src = music.src;
+  bgAudio.load();
+  updateMusicButton();
+  if(wasPlaying){
+    initAudio();
+    bgAudio.play().catch(()=>{});
+  }
 }
 
 function toggleDifficulty(){
@@ -1301,6 +1331,7 @@ function toggleTheme(){
 // init
 updateDifficultyButton();
 updateThemeButton();
+updateMusicButton();
 applyTheme();
 drawStaff();
 drawFingerboard();
