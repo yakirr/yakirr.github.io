@@ -188,6 +188,80 @@
     color: #69512f;
   }
 
+  body.theme-unicorn .page::before { content: '🦄'; color: rgba(255, 186, 241, 0.8); }
+  body.theme-unicorn .page::after { content: '🌈'; color: rgba(146, 201, 253, 0.8); }
+  body.theme-rainbow .page::before { content: '🌈'; color: rgba(255, 215, 111, 0.85); }
+  body.theme-rainbow .page::after { content: '⭐'; color: rgba(255, 255, 255, 0.85); }
+
+  body.theme-unicorn {
+    background: radial-gradient(circle at 20% 10%, rgba(255, 224, 250, 0.95) 0 8%, transparent 10%),
+                radial-gradient(circle at 80% 20%, rgba(230, 245, 255, 0.9) 0 7%, transparent 8%),
+                linear-gradient(180deg, #ffe6ff 0%, #f6f1ff 35%, #e2f8ff 72%, #ffe8ff 100%);
+    color: #5f2c66;
+  }
+  body.theme-unicorn::before {
+    background: radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.75) 0 4%, transparent 5%);
+  }
+  body.theme-unicorn::after {
+    background: radial-gradient(circle at 82% 80%, rgba(255, 208, 255, 0.35) 0 14%, transparent 15%);
+  }
+  body.theme-unicorn .page,
+  body.theme-unicorn .panel,
+  body.theme-unicorn .leaderboardCard {
+    background: rgba(255, 250, 255, 0.96);
+    border-color: rgba(232, 205, 243, 0.9);
+    box-shadow: 0 20px 48px rgba(183, 123, 211, 0.12);
+  }
+  body.theme-unicorn #startBtn,
+  body.theme-unicorn .secondaryBtn {
+    background: linear-gradient(135deg, #ff9ff2, #9cc7ff);
+  }
+  body.theme-unicorn #easyBtn,
+  body.theme-unicorn .dangerBtn {
+    background: linear-gradient(135deg, #c58dff, #7cd9ff);
+  }
+  body.theme-unicorn #themeBtn {
+    background: linear-gradient(135deg, #ff8cf7, #7dc6ff);
+  }
+  body.theme-unicorn .scoreBadge {
+    background: linear-gradient(135deg, #fff2ff, #f3ecff);
+    color: #7e418d;
+  }
+
+  body.theme-rainbow {
+    background: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.9) 0 4%, transparent 5%),
+                linear-gradient(180deg, #ff8df5 0%, #f6d56e 20%, #77d6ff 45%, #95ffbe 70%, #e7b5ff 100%);
+    color: #40294d;
+  }
+  body.theme-rainbow::before {
+    background: radial-gradient(circle at 22% 10%, rgba(255,255,255,0.88) 0 3%, transparent 4%);
+  }
+  body.theme-rainbow::after {
+    background: radial-gradient(circle at 72% 78%, rgba(255, 255, 255, 0.5) 0 16%, transparent 17%);
+  }
+  body.theme-rainbow .page,
+  body.theme-rainbow .panel,
+  body.theme-rainbow .leaderboardCard {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(219, 191, 255, 0.92);
+    box-shadow: 0 20px 50px rgba(124, 84, 176, 0.12);
+  }
+  body.theme-rainbow #startBtn,
+  body.theme-rainbow .secondaryBtn {
+    background: linear-gradient(135deg, #ffbd2b, #ff6bbd);
+  }
+  body.theme-rainbow #easyBtn,
+  body.theme-rainbow .dangerBtn {
+    background: linear-gradient(135deg, #4dafeb, #8f6cff);
+  }
+  body.theme-rainbow #themeBtn {
+    background: linear-gradient(135deg, #ffd35f, #4d8cff);
+  }
+  body.theme-rainbow .scoreBadge {
+    background: linear-gradient(135deg, #fff7f9, #e5f4ff);
+    color: #4b2f5f;
+  }
+
   body.theme-castle {
     background: radial-gradient(circle at 18% 12%, rgba(241, 241, 255, 0.9) 0 5%, transparent 6%),
                 radial-gradient(circle at 85% 15%, rgba(222, 215, 255, 0.55) 0 10%, transparent 10.5%),
@@ -222,6 +296,43 @@
     background: linear-gradient(135deg, #eeebff, #dbd6ff);
     color: #4b3f7a;
   }
+
+  .page::before,
+  .page::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.99;
+    font-size: 117px;
+    line-height: 1;
+    transform: rotate(-10deg);
+  }
+
+  .page::before {
+    top: 22px;
+    left: -12px;
+  }
+
+  .page::after {
+    bottom: -48px;
+    right: -12px;
+  }
+
+  body.theme-pink .page::before { content: '🌸'; color: rgba(255, 120, 185, 0.42); }
+  body.theme-pink .page::after { content: '✨'; color: rgba(255, 215, 245, 0.42); }
+
+  body.theme-bubbles .page::before { content: '🫧'; color: rgba(122, 218, 255, 0.42); }
+  body.theme-bubbles .page::after { content: '🌊'; color: rgba(92, 181, 255, 0.42); }
+
+  body.theme-forest .page::before { content: '🌲'; color: rgba(81, 150, 91, 0.42); }
+  body.theme-forest .page::after { content: '🍃'; color: rgba(141, 193, 107, 0.42); }
+
+  body.theme-beach .page::before { content: '🏖️'; color: rgba(255, 215, 110, 0.42); }
+  body.theme-beach .page::after { content: '🌴'; color: rgba(98, 180, 128, 0.42); }
+
+  body.theme-castle .page::before { content: '🏰'; color: rgba(147, 122, 212, 0.42); }
+  body.theme-castle .page::after { content: '🛡️'; color: rgba(180, 160, 235, 0.42); }
 
   .page {
     position: relative;
@@ -268,6 +379,7 @@
     font-size: 18px;
     font-weight: 700;
     color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.22);
     cursor: pointer;
     box-shadow: 0 8px 18px rgba(154, 89, 255, 0.25);
     transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
@@ -332,7 +444,7 @@
   canvas {
     border: 4px solid #fff;
     border-radius: 24px;
-    background: linear-gradient(180deg, #fffdfd, #fff6fb);
+    background: transparent;
     box-shadow: inset 0 2px 10px rgba(255,255,255,0.9);
   }
 
@@ -615,7 +727,7 @@ let lastClicked = null;
 let difficulty = 'easy';
 const difficultyModes = ['easy', 'medium', 'hard'];
 let theme = 'pink';
-const themeModes = ['pink', 'bubbles', 'forest', 'beach', 'castle'];
+const themeModes = ['pink', 'bubbles', 'forest', 'beach', 'unicorn', 'rainbow', 'castle'];
 const leaderboardKey = 'ariel_violin_leaderboard_v1';
 
 let audioCtx = null;
@@ -894,12 +1006,6 @@ function getFingerLabel(string, pos){
 function drawStaff(){
   ctx.clearRect(0,0,320,260);
 
-  const bg = ctx.createLinearGradient(0, 0, 0, 260);
-  bg.addColorStop(0, '#fffdfd');
-  bg.addColorStop(1, '#fff0f8');
-  ctx.fillStyle = bg;
-  ctx.fillRect(0,0,320,260);
-
   ctx.strokeStyle = '#6f5a77';
   ctx.lineWidth = 2.4;
   for(let i=0;i<5;i++){
@@ -1110,7 +1216,7 @@ function createStar(startX, startY){
 function checkAnswer(pos, clickX, clickY){
   if(!currentNote) return;
   if(pos.string === currentNote.string && pos.pos === currentNote.pos){
-    const award = difficulty === 'easy' ? 10 : difficulty === 'medium' ? 20 : 30;
+    const award = difficulty === 'easy' ? 5 : difficulty === 'medium' ? 20 : 30;
     score += award;
     document.getElementById('score').innerText = score;
     playCorrectDing();
