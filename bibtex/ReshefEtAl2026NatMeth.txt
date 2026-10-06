@@ -1,0 +1,10 @@
+@article{reshef2026vima,
+  author    = {Reshef, Yakir A. and Sood, Lakshay and Curtis, Michelle and Rumker, Laurie and Stein, Daniel J. and Palshikar, Mukta G. and Nayar, Saba and Filer, Andrew and Jonsson, Anna Helena and Korsunsky, Ilya and Raychaudhuri, Soumya},
+  title     = {Accurate and well-powered case--control analysis of spatial molecular data},
+  journal   = {Nature Methods},
+  year      = {2026},
+  month     = oct,
+  doi       = {10.1038/s41592-026-03236-1},
+  url       = {https://www.nature.com/articles/s41592-026-03236-1},
+  publisher = {Nature Publishing Group}
+}
